@@ -114,6 +114,7 @@ footer {
 .social-icons {
 	width: 2.5em;
 }
+
 .footer-social-links a:hover {
 	color: black;
 	transform: scale(1.2)

@@ -1,0 +1,125 @@
+* {
+	margin: 0;
+	padding: 0;
+}
+/* background image styles */
+#hero {
+	background: url('./images/TouringGlory.jpg') no-repeat center center fixed;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+	image-rendering: auto;
+	height: 100vh;
+}
+#hero-background {
+	height: 100vh;
+	background-color: rgba(0, 0, 0, 0.24);
+	z-index: -1;
+}
+/* navbar styles */
+#navLogo {
+	width: 20em;
+	image-rendering: crisp-edges;
+	padding-left: 3em;
+}
+.navLinks {
+	margin-left: auto;
+	padding-right: 2em;
+}
+nav .navbar-nav li a {
+	color: #ffffffc7 !important;
+    font-size: 20px;
+}
+.nav-link {
+	transition: 200ms !important;
+}
+.nav-link:hover,
+.dropdown-item:hover {
+	color: black !important;
+}
+.nav-link:active {
+	transform: scale(.9) !important;
+}
+
+/* header styles */
+.hero-header {
+	width: 70%;
+	margin: auto;
+}
+
+#hero-banner {
+	color: white;
+	text-align: center;
+	font-size: 3em;
+	font-family: 'Poppins', sans-serif;
+	transform: translateY(2em);
+}
+/* mission statement styles */
+
+.mission-statement-header {
+	text-align: center;
+	margin-top: 2em;
+	font-size: 2em;
+}
+
+.mission-statement-container {
+	display: flex;
+	justify-content: space-around;
+}
+
+.mission-statement-card {
+	width: 20em;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.mission-statement-card img {
+	width: 20em;
+	image-rendering: auto;
+}
+
+.mission-statement-card p {
+	text-align: center;
+}
+
+.mission-statement-card h3, p, img {
+	padding: 5px;
+}
+
+#middle-card {
+	padding-top: 3em;
+}
+
+/*footer styles */
+.footer-logo img {
+	width: 5em;
+	height: 5em;
+	image-rendering: auto;
+}
+footer {
+	display: flex;
+	justify-content: space-between;
+	background-color: #99d6cf;
+}
+.footer-social-links {
+	display: flex;
+	margin-right: 3em;
+	width: 8em;
+	justify-content: space-around;
+	align-items: center;
+	opacity: .7;
+}
+.social-icons {
+	width: 2.5em;
+}
+.footer-social-links a:hover {
+	color: black;
+	transform: scale(1.2)
+}
+
+.footer-social-links a:active {
+	color: rgba(0, 0, 0, 0.452);
+	transform: scale(1);
+}

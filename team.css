@@ -47,6 +47,21 @@ nav .navbar-nav li a {
     color: rgba(255, 255, 255, 0.788);
     font-size: 38px;
 }
+@media only screen and (max-width: 600px){
+    #hero, #hero-background {
+        height: 70vh;
+    }
+    .hero-headers h3 {
+        font-size: 30px;
+    }
+    .hero-headers {
+        margin-top: 5em;
+    }
+    #navLogo {
+        width: 12em;
+        padding-left: 0;
+    }
+}
 /*footer styles */
 .footer-logo img {
 	width: 5em;
@@ -113,4 +128,12 @@ h2 {
 }
 .card-text a:hover {
     text-decoration: underline;
+}
+@media only screen and (max-width: 600px){
+    h2 {
+        padding-top: 1em;
+    }
+    .card {
+        flex-basis: 80%;
+    }
 }

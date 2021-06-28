@@ -14,9 +14,11 @@ section {
 	background-size: cover;
 	image-rendering: auto;
 	height: 100vh;
+	width: 100vw;
 }
 #hero-background {
 	height: 100vh;
+	width: 100vw;
 	background-color: rgba(0, 0, 0, 0.329);
 	z-index: -1;
 }
@@ -58,6 +60,23 @@ nav .navbar-nav li a {
 	font-family: 'Poppins', sans-serif;
 	transform: translateY(2em);
 }
+
+@media only screen and (max-width: 600px){
+	#hero-banner {
+		font-size: 2em;
+		transform: translateY(0);
+	}
+	#hero, #hero-background {
+		height: 70vh;
+	}
+	#navLogo {
+        width: 12em;
+        padding-left: 0;
+    }
+	.hero-header {
+		margin-top: 4em;
+	}
+}
 /* mission statement styles */
 
 .mission-statement-header {
@@ -95,7 +114,23 @@ nav .navbar-nav li a {
 #middle-card {
 	padding-top: 3em;
 }
-
+@media only screen and (max-width: 600px){
+	.mission-statement-header {
+		margin-top: 1em;
+		font-size: 1.25em;
+	}
+	#middle-card {
+		padding-top: 0;
+	}
+	.mission-statement-container{
+		flex-wrap: wrap;
+	}
+	.mission-statement-card {
+		flex-basis: 100%;
+		padding-left: 1em;
+		padding-right: 1em;
+	}
+}
 /*footer styles */
 .footer-logo img {
 	width: 5em;
@@ -129,7 +164,11 @@ footer {
 	color: rgba(0, 0, 0, 0.452);
 	transform: scale(1);
 }
-
+@media only screen and (max-width: 600px){
+	footer {
+		margin-top: 4em;
+	}
+}
 /* donate section styles */
 #donation {
 	background: url('./images/soloSkierLeft.jpg') no-repeat center center fixed;
@@ -139,9 +178,11 @@ footer {
 	background-size: cover;
 	image-rendering: auto;
 	height: 75vh;
+	width: 100vw;
 }
 #donation-background {
 	height: 75vh;
+	width: 100vw;
 	background-color: rgba(0, 0, 0, 0.411);
 }
 .donation-card {
@@ -181,7 +222,21 @@ footer {
 .donation-card button:active {
 	transform: scale(.9)
 }
-
+@media only screen and (max-width: 600px){
+	.donation-card h2 {
+		font-size: 1.5em;
+		font-weight: 700;
+	}
+	.donation-card h4 {
+		font-size: 1em;
+	}
+	#donation-background {
+		background-color: rgba(0, 0, 0, 0.582);
+	}
+	.donation-card button {
+		width: 8em;
+	}
+}
 /* testimonial styles */
 
 .testimonial {
@@ -194,4 +249,17 @@ footer {
 }
 #testimonial-quote {
 	padding-top: 3em;
+}
+@media only screen and (max-width: 600px){
+	.testimonial {
+		width: 80vw;
+	}
+	.testimonial p {
+		font-size: medium;
+	}
+	#testmionial-quote {
+		padding-top: 1em;
+		
+		width: 100%;
+	}
 }

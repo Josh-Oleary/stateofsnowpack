@@ -82,6 +82,11 @@ footer {
 	background-color: rgba(0, 0, 0, 0.329);
 	z-index: -1;
 }
+@media only screen and (max-width: 600px){
+    #hero, #hero-background {
+        height: 90vh;
+    }
+}
 /* form styles */
 form {
     flex-basis: 50%;
@@ -107,6 +112,13 @@ textarea {
 }
 #submitBtn {
     width: 100%;
+    background-color: #99d6cf;
+    transition: 250ms;
+    color: black;
+}
+#submitBtn:hover {
+    background-color: #335f78;
+    color: rgba(255, 255, 255, 0.712);
 }
 
 /* page layout */
@@ -117,4 +129,29 @@ textarea {
     color: rgba(255, 255, 255, 0.795);
     font-size: 80px;
     transform: translateY(90px)
+}
+
+@media only screen and (max-width: 600px){
+    .page-cta {
+        display: none;
+    }
+    .page-container {
+        display: block;
+    }
+    .contact-form-container {
+        width: 90%;
+    }
+    #navLogo {
+        width: 12em;
+        padding-left: 0;
+    }
+    .contact {
+        margin-top: 5em;
+    }
+    textarea {
+        height: 10em;
+    }
+    form {
+        margin-right: 1em;
+    }
 }

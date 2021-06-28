@@ -63,11 +63,13 @@ nav .navbar-nav li a {
 
 @media only screen and (max-width: 600px){
 	#hero-banner {
+		width: 100vw;
 		font-size: 2em;
 		transform: translateY(0);
 	}
 	#hero, #hero-background {
 		height: 70vh;
+		width: 100vw;
 	}
 	#her0 {
 		background: url('./images/TouringGlory.jpg') no-repeat center center fixed;
@@ -76,6 +78,7 @@ nav .navbar-nav li a {
 	-o-background-size: cover;
 	background-size: cover;
 	image-rendering: auto;
+	width: 100vw;
 	}
 	#navLogo {
         width: 12em;

@@ -96,7 +96,7 @@ form {
     width: 70%;
 }
 .contact-form-container div {
-    margin: 1.5em;
+    margin: 20px;
 }
 #lastName {
    margin-left: 3em;
@@ -115,9 +115,6 @@ textarea {
 }
 .page-cta h2  {
     color: rgba(255, 255, 255, 0.795);
-    font-size: 4em;
-    transform: translateY(1.5em)
-}
-.social-icons-cta {
-    ;
+    font-size: 80px;
+    transform: translateY(90px)
 }

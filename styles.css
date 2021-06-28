@@ -69,6 +69,14 @@ nav .navbar-nav li a {
 	#hero, #hero-background {
 		height: 70vh;
 	}
+	#her0 {
+		background: url('./images/TouringGlory.jpg') no-repeat center center fixed;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+	image-rendering: auto;
+	}
 	#navLogo {
         width: 12em;
         padding-left: 0;
@@ -129,6 +137,9 @@ nav .navbar-nav li a {
 		flex-basis: 100%;
 		padding-left: 1em;
 		padding-right: 1em;
+	}
+	.mission-statement-card img {
+		width: 90vw;
 	}
 }
 /*footer styles */

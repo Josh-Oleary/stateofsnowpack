@@ -1,3 +1,12 @@
+html,body
+{
+    width: 100%;
+    height: 100%;
+    margin: 0px;
+    padding: 0px;
+    overflow-x: hidden; 
+}
+
 /* navbar styles */
 #navLogo {
 	width: 20em;
@@ -23,15 +32,7 @@ nav .navbar-nav li a {
 	transform: scale(.9) !important;
 }
 /* background image styles */
-#hero {
-	background: url('./images/teamBackground.jpg') no-repeat center center fixed;
-	-webkit-background-size: cover;
-	-moz-background-size: cover;
-	-o-background-size: cover;
-	background-size: cover;
-	image-rendering: auto;
-	height: 80vh;
-}
+
 #hero-background {
 	height: 80vh;
 	background-color: rgba(0, 0, 0, 0.26);

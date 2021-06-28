@@ -2,6 +2,15 @@
 	margin: 0;
 	padding: 0;
 }
+html,body
+{
+    width: 100%;
+    height: 100%;
+    margin: 0px;
+    padding: 0px;
+    overflow-x: hidden; 
+}
+
 section {
 	margin-bottom: 2em;
 }
@@ -63,22 +72,11 @@ nav .navbar-nav li a {
 
 @media only screen and (max-width: 600px){
 	#hero-banner {
-		width: 100vw;
 		font-size: 2em;
 		transform: translateY(0);
 	}
 	#hero, #hero-background {
 		height: 70vh;
-		width: 100vw;
-	}
-	#her0 {
-		background: url('./images/TouringGlory.jpg') no-repeat center center fixed;
-	-webkit-background-size: cover;
-	-moz-background-size: cover;
-	-o-background-size: cover;
-	background-size: cover;
-	image-rendering: auto;
-	width: 100vw;
 	}
 	#navLogo {
         width: 12em;
@@ -86,6 +84,16 @@ nav .navbar-nav li a {
     }
 	.hero-header {
 		margin-top: 4em;
+	}
+}
+@media only screen and (min-width: 600px) {
+	#hero-banner {
+		transform: translateY(-.1em);
+		font-size: 2.3em;
+	}
+	#navLogo {
+		width: 17em;
+		padding-left: 0;
 	}
 }
 /* mission statement styles */
@@ -143,6 +151,23 @@ nav .navbar-nav li a {
 	}
 	.mission-statement-card img {
 		width: 90vw;
+	}
+}
+@media only screen and (min-width: 600px){
+	.mission-statement-header {
+		font-size: 1.5em;
+	}
+	.mission-statement-container{
+		flex-wrap: wrap;
+	}
+	.mission-statement-card {
+		flex-basis: 50%;
+	}
+	#middle-card {
+		padding-top: 0;
+	}
+	#third-card {
+		padding-top: 1em;
 	}
 }
 /*footer styles */

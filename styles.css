@@ -96,6 +96,13 @@ nav .navbar-nav li a {
 		padding-left: 0;
 	}
 }
+@media only screen and (min-width: 768px){
+	#hero-banner {
+		font-size: 4em;
+		line-height: 1.5em;
+		transform: translateY(1em)
+	}
+}
 /* mission statement styles */
 
 .mission-statement-header {
@@ -169,6 +176,13 @@ nav .navbar-nav li a {
 	#third-card {
 		padding-top: 1em;
 	}
+}
+@media only screen and (min-width: 768px){
+	.mission-statement-header {
+		font-size: 2em;
+	}
+	.miss
+
 }
 /*footer styles */
 .footer-logo img {
@@ -276,6 +290,17 @@ footer {
 		width: 8em;
 	}
 }
+@media only screen and (min-width: 768px){
+	.donation-card h4 {
+		font-size: 2em;
+	}
+	.donation-card button {
+		width: 10em;
+	}
+	.donation-card {
+		width: 80%;
+	}
+}
 /* testimonial styles */
 
 .testimonial {
@@ -298,7 +323,15 @@ footer {
 	}
 	#testmionial-quote {
 		padding-top: 1em;
-		
 		width: 100%;
+	}
+}
+@media only screen and (min-width: 768px){
+	.testimonial {
+		width: 90vw;
+	}
+	
+	.testimonial p {
+		font-size: 1.5em;
 	}
 }

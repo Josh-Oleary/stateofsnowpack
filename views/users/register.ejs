@@ -1,0 +1,68 @@
+<%- include('../partials/header') %> 
+<section id="contact-hero">
+    <div id="contact-hero-background">
+<%- include('../partials/navbar') %> 
+
+
+<div id="register-form-container" class="row">
+    <div class="col-6 offset-1">
+        <form class="validated-form" id="register-form" action="/register" method="POST" novalidate>
+            <h1 class="text-center">Register</h1>
+            <div>
+                <label class="form-label" for="name">Name</label>
+                <input class="form-control" type="text" id="name" name="name" required>
+                <div class="valid-feedback">
+                    Looks good!
+                </div>
+                <div class="invalid-feedback">
+                    Please enter name
+                </div>
+            </div>
+            <div>
+                <label class="form-label" for="email">Email</label>
+                <input  class="form-control" type="email" id="email" name="email" required>
+                <div class="valid-feedback">
+                    Looks good!
+                </div>
+                <div class="invalid-feedback">
+                    Invalid email address
+                </div>
+            </div>
+            <div>
+                <label class="form-label" for="passwored">Password</label>
+                <input  class="form-control" type="text" id="username" name="password" required>
+                <div class="valid-feedback">
+                    Looks good!
+                </div>
+                <div class="invalid-feedback">
+                    Invalid password
+                </div>
+            </div>
+            <button class="btn">Register</button>
+        </form>
+    </div>
+</div>
+</section>
+<script>
+    // Example starter JavaScript for disabling form submissions if there are invalid fields
+(function () {
+  'use strict'
+
+  // Fetch all the forms we want to apply custom Bootstrap validation styles to
+  var forms = document.querySelectorAll('.validated-form')
+
+  // Loop over them and prevent submission
+  Array.prototype.slice.call(forms)
+    .forEach(function (form) {
+      form.addEventListener('submit', function (event) {
+        if (!form.checkValidity()) {
+          event.preventDefault()
+          event.stopPropagation()
+        }
+
+        form.classList.add('was-validated')
+      }, false)
+    })
+})()
+</script>
+<%- include('../partials/footer') %> 

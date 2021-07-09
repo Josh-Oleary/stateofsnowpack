@@ -1,0 +1,513 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+html,body
+{
+    width: 100%;
+    height: 100%;
+    margin: 0px;
+    padding: 0px;
+    overflow-x: hidden; 
+}
+/* background image styles */
+#hero {
+	background: url('../images/TouringGlory.jpg') no-repeat center center fixed;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+	image-rendering: auto;
+	height: 70vh;
+	width: 100vw;
+}
+#hero-background {
+	height: 70vh;
+	width: 100vw;
+	background-color: rgba(0, 0, 0, 0.404);
+	z-index: -1;
+}
+
+/* navbar styles */
+#navLogo {
+	width: 10em;
+	image-rendering: crisp-edges;
+	padding-left: .5em;
+}
+.navLinks {
+	margin-left: auto;
+	padding-right: 2em;
+}
+nav .navbar-nav li a {
+	color: #ffffffc7 !important;
+    font-size: 20px;
+}
+.nav-link {
+	transition: 200ms !important;
+}
+.nav-link:hover,
+.dropdown-item:hover {
+	color: black !important;
+}
+.nav-link:active {
+	transform: scale(.9) !important;
+}
+/* hero style */
+.hero-header {
+    transform: translateY(7em);
+    
+}
+.hero-header h1 {
+	color: white;
+	font-weight: 600;
+	font-family: 'Jost', sans-serif;
+	text-align: center;
+	letter-spacing: .1em;
+	animation: fadeUp 1s;
+}
+
+
+
+/*mission statement styles*/
+
+.mission-statement-header {
+	text-align: center;
+	margin-top: 1em;
+	font-family: 'Jost', sans-serif;
+	font-weight: 600;
+	font-size: 25px;
+}
+.mission-statement-container {
+	width: 80vw;
+	margin-left: 10vw;
+	display: flex;
+	flex-direction: column;
+}
+.mission-statement-card {
+	margin-top: 1em;
+}
+.mission-statement-container img {
+	width: 100%;
+	box-shadow: 0 0 10px;
+}
+
+.mission-statement-card h3,p {
+	text-align: center;
+}
+.mission-statement-card h3 {
+	margin-top: 1em;
+	font-family: 'Jost', sans-serif;
+	font-weight: 600;
+}
+.mission-statement-card p {
+	font-family: 'Nunito', sans-serif;
+}
+
+/* donate section styles */
+#donation {
+	background: url('/images/soloSkierLeft.jpg') no-repeat center center fixed;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+	image-rendering: auto;
+	height: 60vh;
+	width: 100vw;
+	margin-top: 1em;
+}
+#donation-background {
+	height: 60vh;
+	width: 100vw;
+	background-color: rgba(0, 0, 0, 0.541);
+}
+.donation-card {
+	height: 80%;
+	padding-top: 3em;
+	text-align: center;
+	color: white;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-around;
+}
+.donation-card h2 {
+	font-size: 40px;
+	font-family: 'Jost', sans-serif;
+}
+.donation-card h4 {
+	line-height: 1.4;
+	font-family: 'Nunito', sans-serif;
+}
+.donation-card button {
+	width: 8em;
+	height: 3em;
+	background-color: #99d6cf;
+	font-weight: 700;
+	border-radius: 5px;
+	transition: 200ms;
+	font-family: 'Nunito', sans-serif;
+	align-self: center;
+}
+
+.donation-card button:hover {
+	background-color: #335f78;
+	border: none;
+	color: #ffffffc7;
+}
+
+.donation-card button:active {
+	transform: scale(.9)
+}
+
+/* testimonial styles */
+
+.testimonial-card {
+	height: 40vh;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-around;
+	padding-top: 3em;
+	padding-left: 1em;
+	padding-right: 1em;
+	margin-bottom: 2em;
+}
+.testimonial-quote {
+	font-family: 'Nunito', sans-serif;
+	
+}
+.quote-credit {
+	font-style: italic;
+}
+
+
+
+/*footer styles */
+.footer-logo img {
+	width: 5em;
+	height: 5em;
+	image-rendering: auto;
+}
+footer {
+	position: relative;
+	bottom: 0;
+	display: flex;
+	justify-content: space-between;
+	background-color: #99d6cf;
+}
+.footer-social-links {
+	display: flex;
+	margin-right: 1em;
+	width: 8em;
+	justify-content: space-around;
+	align-items: center;
+	opacity: .7;
+}
+.social-icons {
+	width: 2em;
+}
+
+.footer-social-links a:hover {
+	color: black;
+	transform: scale(1.2)
+}
+
+.footer-social-links a:active {
+	color: rgba(0, 0, 0, 0.452);
+	transform: scale(1);
+}
+
+/* team background image styles */
+#team-hero {
+	background: url('/images/teamBackground.jpg') no-repeat right center fixed;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+	background-position-x: 70%;
+	image-rendering: auto;
+	height: 70vh;
+	width: 100vw;
+}
+#hero-background {
+	height: 70vh;
+	width: 100vw;
+	background-color: rgba(0, 0, 0, 0.404);
+	z-index: -1;
+}
+
+/* team page styles */
+
+.team-hero-headers {
+	text-align: center;
+	transform: translateY(4em)
+}
+.team-hero-headers h3 {
+	font-family: 'Jost', sans-serif;
+	font-weight: 600;
+	line-height: 1.5;
+	letter-spacing: .1em;
+	font-size: 30px;
+	animation: fadeUp 1s;
+}
+
+.team h2 {
+	text-align: center;
+	margin-top: 1em;
+	font-family: 'Jost', sans-serif;
+	font-weight: 600;
+}
+.team-container {
+	margin-top: 1em;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-around;
+}
+.card {
+	flex-basis: 40%;
+	box-shadow: 0 0 6px;
+	border: none;
+}
+
+/* contact page styles */
+#contact-hero {
+	background: url('/images/contactBG.jpg') no-repeat center center fixed;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+	image-rendering: auto;
+	height: 90vh;
+}
+#contact-hero-background {
+	height: 90vh;
+	background-color: rgba(0, 0, 0, 0.329);
+	z-index: -1;
+}
+.page-cta {
+	text-align: center;
+	transform: translateY(4em);
+	color: white;
+}
+.page-cta h2 {
+	font-size: 50px;
+}
+form {
+	width: 80vw;
+	margin: auto;
+	transform: translateY(6em);
+}
+.contact-form-container {
+	height: 20em;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-around;
+}
+textarea {
+	height: 8em;
+}
+#submitBtn {
+    width: 100%;
+    background-color: #99d6cf;
+    transition: 250ms;
+    color: black;
+}
+#submitBtn:hover {
+    background-color: #335f78;
+    color: rgba(255, 255, 255, 0.712);
+}
+/* registration styles */
+#register-form-container {
+	width: 80vw;
+	margin: auto;
+	margin-top: 0;
+}
+#register-form {
+	width: 60vw;
+	background-color: rgba(71, 71, 71, 0.699);
+	padding: 1em;
+	padding-bottom: 1em;
+	border-radius: 15px;
+	color: rgba(255, 255, 255, 0.712);
+}
+#register-form button {
+	margin-top: 1em;
+	width: 100%;
+	background-color: #99d6cf;
+    transition: 250ms;
+    color: black;
+}
+#register-form button:hover {
+    background-color: #335f78;
+    color: rgba(255, 255, 255, 0.712);
+}
+#login-form-container {
+	width: 80vw;
+	margin: auto;
+	margin-top: 0;
+}
+#login-form {
+	width: 60vw;
+	background-color: rgba(71, 71, 71, 0.699);
+	padding: 1em;
+	padding-bottom: 1em;
+	border-radius: 15px;
+	color: rgba(255, 255, 255, 0.712);
+}
+#login-form button {
+	margin-top: 1em;
+	width: 100%;
+	background-color: #99d6cf;
+    transition: 250ms;
+    color: black;
+}
+#login-form button:hover {
+    background-color: #335f78;
+    color: rgba(255, 255, 255, 0.712);
+}
+#login-form a {
+	margin-top: .5em;
+	margin-left: 1.4em;
+	color: #f7951dde;
+	text-decoration: none;
+	border: none;
+}
+#login-form a:hover, a:focus {
+	text-decoration: underline;
+}
+
+/*responsive styling for phone landscape*/
+@media only screen
+	and (min-device-width: 414px)
+	and (max-device-width: 736px)
+	and (-webkit-min-device-pixel-ratio: 3)
+	and (orientation: landscape) {
+		.hero-header {
+			transform: translateY(5em)
+		}
+		.mission-statement-container {
+			flex-direction: row;
+			overflow-x: hidden;
+			justify-content: space-between;
+			flex-wrap: wrap;
+		}
+		.third-card {
+			flex-basis: 100%;
+			align-self: center;
+		}
+		.mission-statement-card {
+			flex-basis: 40%;
+		}
+		.donation-card h2 {
+			font-size: 35px;
+		}
+		.donation-card h4 {
+			line-height: 1.2;
+			font-size: 20px;
+		}
+	}
+/* styling for ipads */
+@media only screen 
+	and (min-width: 736px)
+	and (max-width: 1024px)
+	and (orientation: portrait) {
+		.hero-header {
+			transform: translateY(13em);
+		}
+		.hero-header h1 {
+			font-size: 45px;
+		}
+		.mission-statement-header {
+			font-size: 35px;
+		}
+		.mission-statement-card {
+			width: 30vw;
+		}
+		.mission-statement-container {
+			flex-direction: row;
+			padding: 0;
+			margin: 0;
+			width: 100%;
+			justify-content: space-evenly;
+		}
+		#donation {
+			height: 50vh;
+		}
+		#donation-background {
+			height: 50vh;
+		}
+		.testimonial-card {
+			height: 30vh;
+		}
+	}
+@media only screen 
+	and (min-width: 737px)
+	and (max-width: 1024px)
+	and (orientation: landscape) {
+		.hero-header {
+			transform: translateY(7em)
+		}
+		.hero-header h1 {
+			font-size: 55px;
+		}
+		.mission-statement-header {
+			font-size: 40px;
+		}
+		.mission-statement-card {
+			width: 30vw;
+		}
+		.mission-statement-container {
+			flex-direction: row;
+			padding: 0;
+			margin: 0;
+			width: 100%;
+			justify-content: space-evenly;
+		}
+		.donation-card h4 {
+			line-height: 2;
+			letter-spacing: 1.6;
+			padding: 0 3em;
+		}
+		#testimonial-quote {
+			padding: 0 5em;
+			margin-bottom: 1em;
+			line-height: 2;
+			letter-spacing: 1.4;
+		}
+	}
+@media only screen 
+	and (min-width: 1025px)
+	and (max-width: 1600px)
+	and (-webkit-min-device-pixel-ratio: 1) {
+		#hero {
+			height: 80vh;
+		}
+		#hero-background {
+			height: 80vh;
+		}
+		.mission-statement-header {
+			font-size: 30px;
+			font-weight: 500;
+		}
+		.mission-statement-card {
+			width: 30vw;
+		}
+		.mission-statement-container {
+			flex-direction: row;
+			padding: 0;
+			margin: 0;
+			width: 100%;
+			justify-content: space-evenly;
+			margin-bottom: 2em;
+		}
+		#testimonial-quote {
+			padding: 0 4em;
+			line-height: 1.5;
+		}
+	}
+
+/*animations*/
+
+@keyframes fadeUp {
+	0% {opacity: 0; transform: translateY(1em);}
+	100% {opacity: 1; transform: translateY()}
+}

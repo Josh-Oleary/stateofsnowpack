@@ -1,0 +1,31 @@
+<%- include('partials/header') %> 
+    <section id="contact-hero">
+        <div id="contact-hero-background">
+<%- include('partials/navbar') %> 
+    <div class="contact">
+      <div class="page-cta">
+        <h2>Get In Touch!</h2>
+      </div>
+        <div class="page-container">
+            <form  action="">
+                <div class="contact-form-container row">
+                    <div>
+                        <input type="text" class="form-control" placeholder="Full Name" aria-label="First name">
+                    </div>
+                    <div>
+                        <input type="email" class="form-control" placeholder="Email Address" aria-label="Last name">
+                    </div>
+                    <div class="input-group">
+                        <span class="input-group-text">Message</span>
+                        <textarea class="form-control" aria-label="Message"></textarea>
+                    </div>
+                    <div> 
+                        <button id="submitBtn" type="button" class="btn btn-secondary btn-lg">Submit</button>
+                    </div>
+                </div>
+            </form>
+           
+        </div>
+    </div>
+    </section>
+      <%- include('partials/footer')%>

@@ -1,0 +1,47 @@
+<%- include('../partials/header') %> 
+<section id="contact-hero">
+    <div id="contact-hero-background">
+<%- include('../partials/navbar') %> 
+
+
+<div id="login-form-container" class="row">
+    <div class="col-6 offset-1">
+        <form class="validated-form" id="login-form" method="POST" action="/login" novalidate>
+            <h1 class="text-center">Login</h1>
+            <div>
+                <label class="form-label" for="email">Email</label>
+                <input  class="form-control" type="email" id="email" name="email" required>
+            </div>
+            <div>
+                <label class="form-label" for="passwored">Password</label>
+                <input  class="form-control" type="text" id="username" name="password" required>
+            </div>
+            <button class="btn">Login</button>
+            <a href="register">Not a member? Sign up!</a>
+        </form>
+    </div>
+</div>
+</section>
+<script>
+    // Example starter JavaScript for disabling form submissions if there are invalid fields
+(function () {
+  'use strict'
+
+  // Fetch all the forms we want to apply custom Bootstrap validation styles to
+  var forms = document.querySelectorAll('.validated-form')
+
+  // Loop over them and prevent submission
+  Array.prototype.slice.call(forms)
+    .forEach(function (form) {
+      form.addEventListener('submit', function (event) {
+        if (!form.checkValidity()) {
+          event.preventDefault()
+          event.stopPropagation()
+        }
+
+        form.classList.add('was-validated')
+      }, false)
+    })
+})()
+</script>
+<%- include('../partials/footer') %> 

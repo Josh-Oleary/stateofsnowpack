@@ -1,0 +1,17 @@
+<%- include('../partials/header') %> 
+<!-- section id for uniuqe background -->
+<section id="nelson-hero">
+    <div id="nelson-hero-background">
+<%- include('../partials/navbar') %>
+        <div class="report-container">
+            <% reports.forEach(function(report) {%>
+            <% if(report.location.toLowerCase() === 'nelson') { %>
+                <h1><%= report.date %></h1> 
+                <h2><%= report.location %></h2>
+                <iframe width="420" height="345" src='<%= report.video.url %>'>
+                </iframe>
+            <% }}); %>
+        </div>
+    </div>
+</section>
+<%- include('../partials/footer') %> 

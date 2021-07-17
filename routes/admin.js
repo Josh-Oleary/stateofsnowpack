@@ -1,17 +1,60 @@
 const express = require('express');
 const router = express.Router();
+const Report = require('../models/report');
+const User = require('../models/user');
+const multer = require('multer');
+const { storage } = require('../cloudinary');
+const upload = multer({ storage });
 
-router.use((req, res, next) => {
-    if(req.query.isAdmin){
-        next();
-    }
-    res.send('Not an Admin!')
-})
-
-router.get('/home', (req, res) => {
-    res.send('Admin homepage')
+//middleware to check if user is admin
+// router.use('/', (req, res, next) => {
+//     if (req.user && req.user.isAdmin) {
+//         next();
+//         return;
+//     }
+//     req.flash('error', 'you are not an admin')
+//     res.redirect('/')
+// });
+//routes for the admin section of the site
+router.get('/', (req, res) => {
+    res.render('admin/home')
 });
 
-
+router.get('/addReport', (req, res) => {
+    res.render("admin/addReport")
+});
+router.post('/addReport', upload.array('video', 1), async (req,res) => {
+    try {
+        const { date, location } = req.body;
+        const report = new Report({ date, location });
+        report.video = req.files.map(f => ({url: f.path, filename: f.filename}));
+        report.author = req.user._id;
+        await report.save((err, doc) => {
+            if(err) console.log(err);
+            console.log(doc);
+        })
+        res.redirect('/');
+    } catch (e) {
+        console.log(e);
+    }
+});
+router.get('/owner', (req, res) => {
+    res.render('admin/owner')
+})
+router.post('/owner', async (req, res) => {
+    const email = req.body.userEmail;
+    const update = { isAdmin: true };
+    let updatedUser = await User.findOneAndUpdate(email, update, { new: true});
+    console.log(updatedUser);
+    res.send(`Successfuly made ${updatedUser.name} and admin`)
+    
+})
+router.put('/owner', async (req, res) => {
+    const email = req.body.userEmail;
+    const update = { isAdmin: false };
+    let updatedUser = await User.findOneAndUpdate(email, update, { new: true});
+    console.log(updatedUser);
+    res.send(`${updatedUser.name} is no longer an Admin`);
+})
 
 module.exports = router;

@@ -25,7 +25,7 @@ html,body
 #hero-background {
 	height: 70vh;
 	width: 100vw;
-	background-color: rgba(0, 0, 0, 0.404);
+	background-color: rgba(0, 0, 0, 0.288);
 	z-index: -1;
 }
 
@@ -267,7 +267,15 @@ footer {
 	box-shadow: 0 0 6px;
 	border: none;
 }
-
+.card-text a {
+	text-decoration: none;
+	color: black;
+	font-family: 'Jost', sans-serif;
+	font-weight: 800;
+}
+.card-text a:hover, a:active {
+	text-decoration: underline;
+}
 /* contact page styles */
 #contact-hero {
 	background: url('/images/contactBG.jpg') no-repeat center center fixed;
@@ -375,6 +383,56 @@ textarea {
 	text-decoration: underline;
 }
 
+/* admin home styles */
+#admin-hero {
+	background: url('/images/admin-home-bg.jpg') no-repeat center center fixed;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+	image-rendering: auto;
+	height: 100vh;
+	z-index: -1;
+}
+#adming-background {
+	height: 90vh;
+	background-color: rgba(0, 0, 0, 0.329);
+	z-index: -2;
+}
+.admin-form {
+	z-index: 1;
+	width: 50vw;
+	height: 50vh;
+	margin: auto;
+}
+.admin-container {
+	width: 100%;
+	display: grid;
+	grid-template-columns: 1fr 1fr 1fr;
+}
+.admin-container a {
+	grid-column-start: 3;
+	margin: auto;
+	text-decoration: none;
+	font-size: 20px;
+	border: 1px solid black;
+	border-radius: 10px;
+	padding: 5px 5px;
+	background-color: #99d6cf;
+    transition: 250ms;
+    color: black;
+	box-shadow: 0 5px 5px;
+}
+.admin-container a:hover, a:active {
+	background-color: #335f78;
+    color: rgba(255, 255, 255, 0.712);
+}
+.admin-container a:hover {
+	box-shadow: 0 4px 5px;
+}
+.admin-container a:active {
+	box-shadow: 0px 3px 4px;
+}
 /*responsive styling for phone landscape*/
 @media only screen
 	and (min-device-width: 414px)
@@ -405,6 +463,22 @@ textarea {
 			font-size: 20px;
 		}
 	}
+/* nelson page style */
+#nelson-hero {
+	background: url('/images/contactBG.jpg') no-repeat center center fixed;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+	image-rendering: auto;
+	height: 100vh;
+}
+#nelson-hero-background {
+	height: 100vh;
+	background-color: rgba(0, 0, 0, 0.404);
+	z-index: -1;
+}
+
 /* styling for ipads */
 @media only screen 
 	and (min-width: 736px)
@@ -479,10 +553,16 @@ textarea {
 	and (max-width: 1600px)
 	and (-webkit-min-device-pixel-ratio: 1) {
 		#hero {
-			height: 80vh;
+			height: 100vh;
 		}
 		#hero-background {
-			height: 80vh;
+			height: 100vh;
+		}
+		#navLogo {
+			width: 18em;
+		}
+		.hero-header {
+			transform: translateY(10em);
 		}
 		.mission-statement-header {
 			font-size: 30px;
@@ -502,6 +582,30 @@ textarea {
 		#testimonial-quote {
 			padding: 0 4em;
 			line-height: 1.5;
+		}
+		#team-hero, #team-hero-background {
+			height: 85vh;
+		}
+		.team-container {
+			flex-direction: row;
+			flex-wrap: wrap;
+		}
+		.team h2 {
+			font-size: 40px;
+		}
+		.team-card {
+			flex-basis: 30%;
+			margin-bottom: 1em;
+			margin-top: 1em;
+		}
+		.team-card img {
+			width: 100%;
+			height: 19em;
+			box-shadow: 0 0 10px;
+		}
+		.team-card h4 {
+			text-align: center;
+			font-size: 30px;
 		}
 	}
 

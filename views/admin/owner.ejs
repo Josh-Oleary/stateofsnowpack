@@ -1,0 +1,26 @@
+<%- include('../partials/header') %> 
+<section id="admin-hero">
+    <div id="admin-background">
+<%- include('../partials/navbar') %>
+        <div id="owner-hero">
+            <h1>Site Owner</h1>
+        </div>
+    </div>
+</section>
+<div>
+    <h3>Make an Admin</h3>
+    <form class="admin-form" action="/admin/owner" method="POST">
+        <label for="userEmail">User Email</label>
+        <input  type="email" id="userEmail" name="userEmail">
+        <button>Make Admin</button>
+    </form>
+</div>
+<div>
+    <h3>Remove an Admin</h3>
+    <form class="admin-form" method="POST" action="/admin/owner?_method=PUT">
+        <label for="user">User Email</label>
+        <input type="email">
+        <button>Remove Admin</button>
+    </form>
+</div>
+<%- include('../partials/footer') %> 

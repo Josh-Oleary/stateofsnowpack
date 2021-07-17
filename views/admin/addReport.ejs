@@ -1,0 +1,17 @@
+<%- include('../partials/header') %>
+<section id="admin-hero">
+    <div id="admin-background">
+        <%- include('../partials/navbar') %>
+        <form enctype="multipart/form-data" action="/admin/addReport" method="POST">
+            <label for="date">Today's Date</label>
+            <input type="date" id="date" name="date">
+            <label for="location">Location</label>
+            <input type="text" id="location" name="location">
+            <label for="video">Choose File</label>
+            <input type="file" id="video" name="video">
+            <button>Submit Report</button>
+        </form>
+    </div>
+</section>
+
+<%- include('../partials/footer') %> 

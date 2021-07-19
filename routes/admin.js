@@ -29,6 +29,7 @@ router.post('/addReport', upload.array('video', 1), async (req,res) => {
         const report = new Report({ date, location });
         report.video = req.files.map(f => ({url: f.path, filename: f.filename}));
         report.author = req.user._id;
+        console.log(report);
         await report.save((err, doc) => {
             if(err) console.log(err);
             console.log(doc);

@@ -8,8 +8,10 @@
             <% if(report.location.toLowerCase() === 'nelson') { %>
                 <h1><%= report.date %></h1> 
                 <h2><%= report.location %></h2>
-                <iframe width="420" height="345" src='<%= report.video.url %>'>
-                </iframe>
+                <h2></h2>
+                <video width="320" height="240" controls>
+                    <source src="<%= report.video[0].url %>">
+                </video>
             <% }}); %>
         </div>
     </div>

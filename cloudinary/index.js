@@ -8,11 +8,14 @@ cloudinary.config({
 });
 
 const storage = new CloudinaryStorage({
-    cloudinary,
+    cloudinary: cloudinary,
     params: {
-        folder: 'SOTS-Reports'//,
-        //allowedFormats: ['mp4', 'mov', 'wmv', 'flv', 'avi', 'avchd', 'webm', 'mkv']
+        resource_type: 'video',
+        folder: 'SOTS-Reports',
+        chunk_size: 6000000, 
+        format: 'MOV'
+        // allowedFormats: ['mp4', 'MOV'],
     }
-})
+});
 
 module.exports = { cloudinary, storage }

@@ -10,16 +10,16 @@
 <div>
     <h3>Make an Admin</h3>
     <form class="admin-form" action="/admin/owner" method="POST">
-        <label for="userEmail">User Email</label>
-        <input  type="email" id="userEmail" name="userEmail">
+        <label for="makeAdminEmail">User Email</label>
+        <input  type="email" id="makeAdminEmail" name="makeAdminEmail">
         <button>Make Admin</button>
     </form>
 </div>
 <div>
     <h3>Remove an Admin</h3>
     <form class="admin-form" method="POST" action="/admin/owner?_method=PUT">
-        <label for="user">User Email</label>
-        <input type="email">
+        <label for="deleteAdminEmail">User Email</label>
+        <input type="email" id="deleteAdminEmail" name="deleteAdminEmail">
         <button>Remove Admin</button>
     </form>
 </div>

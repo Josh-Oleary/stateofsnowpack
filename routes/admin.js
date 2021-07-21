@@ -43,17 +43,18 @@ router.get('/owner', (req, res) => {
     res.render('admin/owner')
 })
 router.post('/owner', async (req, res) => {
-    const email = req.body.userEmail;
+    const email = req.body.makeAdminEmail;
+    const filter = { email: email }
     const update = { isAdmin: true };
-    let updatedUser = await User.findOneAndUpdate(email, update, { new: true});
+    let updatedUser = await User.findOneAndUpdate(filter, update, { new: true});
     console.log(updatedUser);
     res.send(`Successfuly made ${updatedUser.name} and admin`)
-    
 })
 router.put('/owner', async (req, res) => {
-    const email = req.body.userEmail;
+    const email = req.body.deleteAdminEmail;
+    const filter = { email: email }
     const update = { isAdmin: false };
-    let updatedUser = await User.findOneAndUpdate(email, update, { new: true});
+    let updatedUser = await User.findOneAndUpdate(filter, update, { new: true});
     console.log(updatedUser);
     res.send(`${updatedUser.name} is no longer an Admin`);
 })

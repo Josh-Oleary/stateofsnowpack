@@ -1,13 +1,13 @@
 <%- include('../partials/header') %> 
-<section id="contact-hero">
-    <div id="contact-hero-background">
+<section id="contact-hero" class="register-page">
+    <div id="contact-hero-background" class="register-page">
 <%- include('../partials/navbar') %> 
 
 
 <div id="login-form-container" class="row">
     <div class="col-6 offset-1">
         <form class="validated-form" id="login-form" method="POST" action="/login" novalidate>
-            <h1 class="text-center">Login</h1>
+            <h1 id="login-header" class="text-center">Login</h1>
             <div>
                 <label class="form-label" for="email">Email</label>
                 <input  class="form-control" type="email" id="email" name="email" required>

@@ -7,6 +7,7 @@ const isLoggedIn = require('../middleware');
 router.get('/register', (req, res) => {
     res.render('users/register');
 });
+//register user w/ passport
 router.post('/register', async (req, res) => {
     try {
         const { email, password, name } = req.body;
@@ -25,6 +26,7 @@ router.post('/register', async (req, res) => {
 router.get('/login', (req, res) => {
     res.render('users/login');
 })
+//login/logout routes using passport authentication and logout method
 router.post('/login', passport.authenticate('local', { failureFlash: 'invalid username or password', failureRedirect: '/login'}), (req, res) => {
     req.flash('success', 'Welcome Back!');
     const redirectUrl = req.session.returnTo || '/';

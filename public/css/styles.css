@@ -262,7 +262,14 @@ footer {
 	flex-wrap: wrap;
 	justify-content: space-around;
 }
-.card {
+.team-card {
+	margin: 1em 0;
+	flex-basis: 90%;
+}
+.team-card h4 {
+	text-align: center;
+}
+.team-card img {
 	flex-basis: 40%;
 	box-shadow: 0 0 6px;
 	border: none;
@@ -373,8 +380,9 @@ textarea {
     color: rgba(255, 255, 255, 0.712);
 }
 #login-form a {
-	margin-top: .5em;
-	margin-left: 1.4em;
+	font-size: 15px;
+	margin-top: 1em;
+	margin-left: 1.2em;
 	color: #f7951dde;
 	text-decoration: none;
 	border: none;
@@ -433,14 +441,30 @@ textarea {
 .admin-container a:active {
 	box-shadow: 0px 3px 4px;
 }
+/* nelson page style */
+#nelson-hero {
+	background: url('/images/contactBG.jpg') no-repeat center center fixed;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+	image-rendering: auto;
+	height: 100vh;
+}
+#nelson-hero-background {
+	height: 100vh;
+	background-color: rgba(0, 0, 0, 0.404);
+	z-index: -1;
+}
 /*responsive styling for phone landscape*/
 @media only screen
-	and (min-device-width: 414px)
-	and (max-device-width: 736px)
-	and (-webkit-min-device-pixel-ratio: 3)
-	and (orientation: landscape) {
+	and (min-device-width: 421px)
+	and (max-device-width: 767px) {
 		.hero-header {
-			transform: translateY(5em)
+			transform: translateY(2em)
+		}
+		#navLogo {
+			width: 8em;
 		}
 		.mission-statement-container {
 			flex-direction: row;
@@ -462,28 +486,66 @@ textarea {
 			line-height: 1.2;
 			font-size: 20px;
 		}
+		.team-hero-headers {
+			transform: translateY(-1em);
+		}
+		.team-hero-headers h3 {
+			font-size: 35px;
+		}
+		.team-card img {
+			height: 15em;
+			width: 19em;
+			box-shadow: 0 0 5px;
+		}
+		.team-container {
+			margin-top: 2em;
+		}
+		.card-body h4 {
+			text-align: center;
+		}
+		.page-cta h2 {
+			font-size: 35px;
+			transform: translateY(-1em);
+			margin-bottom: 0;
+		}
+		.page-container {
+			transform: translateY(-2em);
+			margin-top: 0;
+		}
+		.contact-form-container {
+			width: 90vw;
+			display: grid;
+			grid-template-columns: 1fr 1fr;
+			grid-template-rows: 1fr 1fr;
+		}
+		.top-row input {
+			width: 100%;
+		}
+		.input-group {
+			width: 100%;
+			transform: translateY(-6em);
+			height: 4em;
+		}
+		#submitBtn {
+			transform: translateY(-4.9em);
+			height: 6.5em;
+		}
+		#login-form-container {
+			transform: translateY(-5em);
+			margin-bottom: 1em;
+		}
+		#register-form-container {
+			transform: translateY(-6em);
+		}
+		#contact-hero, #contact-hero-background {
+			height: 120vh !important;
+		}
 	}
-/* nelson page style */
-#nelson-hero {
-	background: url('/images/contactBG.jpg') no-repeat center center fixed;
-	-webkit-background-size: cover;
-	-moz-background-size: cover;
-	-o-background-size: cover;
-	background-size: cover;
-	image-rendering: auto;
-	height: 100vh;
-}
-#nelson-hero-background {
-	height: 100vh;
-	background-color: rgba(0, 0, 0, 0.404);
-	z-index: -1;
-}
 
 /* styling for ipads */
 @media only screen 
-	and (min-width: 736px)
-	and (max-width: 1024px)
-	and (orientation: portrait) {
+	and (min-width: 768px)
+	and (max-width: 1024px) {
 		.hero-header {
 			transform: translateY(13em);
 		}
@@ -512,16 +574,46 @@ textarea {
 		.testimonial-card {
 			height: 30vh;
 		}
+		.team-hero-headers h3 {
+			transform: translateY(2em);
+			font-size: 45px;
+		}
+		.team h2 {
+			font-size: 35px;
+		}
+		#contact-hero, #contact-hero-background {
+			height: 92vh;
+		}
+		.contact {
+			transform: translateY(6em)
+		}
+		.page-cta h2 {
+			font-size: 65px;
+		}
+		#login-form-container, #register-form-container {
+			transform: translateY(-6em);
+		}
+		.register-page {
+			height: 120vh !important;
+		}
 	}
 @media only screen 
-	and (min-width: 737px)
-	and (max-width: 1024px)
-	and (orientation: landscape) {
+	and (min-width: 1024px)
+	and (max-width: 1365px) {
+		#hero {
+			height: 95vh;
+		}
+		#hero-background {
+			height: 95vh;
+		}
 		.hero-header {
-			transform: translateY(7em)
+			transform: translateY(8em)
 		}
 		.hero-header h1 {
 			font-size: 55px;
+		}
+		#navLogo {
+			width: 18em;
 		}
 		.mission-statement-header {
 			font-size: 40px;
@@ -547,10 +639,49 @@ textarea {
 			line-height: 2;
 			letter-spacing: 1.4;
 		}
+		.team-hero-headers h3 {
+			font-size: 40px;
+			transform: translateY(-2em)
+		}
+		.contact {
+			transform: translateY(-3em);
+		}
+		#login-form-container {
+			transform: translateY(-4em);
+		}
+		#register-form-container {
+			transform: translateY(-4em);
+			margin-bottom: 2em;
+		}
+		.team-card {
+			flex-basis: 30%;
+		}
+		.contact-form-container {
+			flex-direction: row;
+			justify-content: center;
+		}
+		.top-row {
+			flex-basis: 30%;
+		}
+		#contact-msg {
+			flex-basis: 60%;
+		}
+		#contact-msg textarea, span {
+			height: 100%;
+			transform: translateY(-2em);
+		}
+		.contactBtn {
+			flex-basis: 60%;
+			margin-bottom: 1em;
+			transform: translateY(-1em);
+		}
+		.register-page {
+			height: 100vh !important;
+		}
 	}
 @media only screen 
-	and (min-width: 1025px)
-	and (max-width: 1600px)
+	and (min-width: 1366px)
+	and (max-width: 1920px)
 	and (-webkit-min-device-pixel-ratio: 1) {
 		#hero {
 			height: 100vh;
@@ -589,6 +720,7 @@ textarea {
 		.team-container {
 			flex-direction: row;
 			flex-wrap: wrap;
+			flex-basis: 30%;
 		}
 		.team h2 {
 			font-size: 40px;

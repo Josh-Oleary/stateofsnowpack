@@ -2,6 +2,7 @@ const express = require('express');
 const router = express.Router();
 const Report = require('../models/report');
 
+//routes for rendering static pages
 router.get('/', (req, res) => {
     res.render('index');
 });

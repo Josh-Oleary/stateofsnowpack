@@ -11,6 +11,7 @@ const LocalStrategy = require('passport-local');
 const session = require('express-session');
 const User = require('./models/user');
 const methodOverride = require('method-override');
+const helmet = require('helmet');
 //declaring external route files
 const adminRoutes = require('./routes/admin')
 const userRoutes = require('./routes/users');
@@ -47,6 +48,7 @@ app.use(session({
     secret: 'devsecret',
     cookie: {
         httpOnly: true,
+        secure: true,
         expires: Date.now() + 1000 * 60 * 60 * 24 * 7,
         maxAge: 1000 * 60 * 60 * 24 * 7
     }
@@ -74,7 +76,13 @@ app.use((req, res, next) => {
 app.use('/', userRoutes)
 app.use('/', publicRoutes)
 app.use('/admin', adminRoutes)
-
+//security middleware
+app.use(helmet({ 
+    crossOriginEmbedderPolicy: true,
+    crossOriginOpenerPolicy: true,
+    crossOriginResourcePolicy: { policy: 'same-site' },
+    originAgentCluster: true
+}));
 
 
 

@@ -12,6 +12,7 @@ const session = require('express-session');
 const User = require('./models/user');
 const methodOverride = require('method-override');
 const helmet = require('helmet');
+const mongoSanitize = require('express-mongo-sanitize');
 //declaring external route files
 const adminRoutes = require('./routes/admin')
 const userRoutes = require('./routes/users');
@@ -84,6 +85,7 @@ app.use(helmet({
     crossOriginResourcePolicy: { policy: 'same-site' },
     originAgentCluster: true
 }));
+app.use(mongoSanitize({ replaceWith: '_' }));
 
 
 

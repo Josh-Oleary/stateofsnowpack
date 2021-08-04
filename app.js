@@ -42,13 +42,14 @@ app.use(methodOverride('_method'));
 app.set('view engine', 'ejs');
 app.set('views', path.join(__dirname, 'views'))
 //configuring session
+app.set('trust proxy', 1)
 app.use(session({
     resave: false, 
     saveUninitialized: true, 
     secret: 'devsecret',
     cookie: {
         httpOnly: true,
-        secure: true,
+        secure: 'auto',
         expires: Date.now() + 1000 * 60 * 60 * 24 * 7,
         maxAge: 1000 * 60 * 60 * 24 * 7
     }

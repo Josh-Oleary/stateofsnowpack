@@ -17,6 +17,8 @@ const mongoSanitize = require('express-mongo-sanitize');
 const adminRoutes = require('./routes/admin')
 const userRoutes = require('./routes/users');
 const publicRoutes = require('./routes/sots')
+
+const port = process.env.PORT || 3000;
 //connecting database
 mongoose.connect('mongodb://localhost:27017/SOTS', {
     useNewUrlParser: true,
@@ -90,6 +92,6 @@ app.use(mongoSanitize({ replaceWith: '_' }));
 
 
 
-app.listen(3000, () =>{
+app.listen(port, () =>{
     console.log('Listening on 3000')
 })

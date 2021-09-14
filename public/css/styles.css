@@ -443,17 +443,17 @@ textarea {
 }
 /* nelson page style */
 #nelson-hero {
-	background: url('/images/contactBG.jpg') no-repeat center center fixed;
+	background: url('/images/admin-home-bg.jpg') no-repeat center center fixed;
 	-webkit-background-size: cover;
 	-moz-background-size: cover;
 	-o-background-size: cover;
 	background-size: cover;
 	image-rendering: auto;
-	height: 100vh;
+	height: 150vh;
 }
 #nelson-hero-background {
-	height: 100vh;
-	background-color: rgba(0, 0, 0, 0.404);
+	height: 150vh;
+	background-color: rgba(255, 255, 255, 0.267);
 	z-index: -1;
 }
 /*responsive styling for phone landscape*/
@@ -740,6 +740,55 @@ textarea {
 			font-size: 30px;
 		}
 	}
+/* report pages */
+
+.location-page-container {
+	display: flex;
+	justify-content: space-around;
+}
+.sponsor-container {
+	width: 30em;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-evenly;
+	margin: 2em;
+}
+
+.sponsor-img-link {
+	flex-basis: 50%;
+}
+.sponsor-img {
+	width: 12em;
+	height: 12em;
+	margin: .5em;
+	box-shadow: 0px 0px 10px black;
+	transition: 250ms;
+}
+.sponsor-img:hover {
+	transform: scale(1.1);
+}
+
+.sponsor-heading {
+	text-align: center;
+}
+.report-info {
+	text-align: center;
+}
+
+.report-container {
+	width: 40em;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+.report-container video {
+	margin-bottom: 1em;
+}
+.report-location , .report-date {
+	text-transform: capitalize;
+	color: black;
+}
 
 /*animations*/
 

@@ -3,17 +3,31 @@
 <section id="nelson-hero">
     <div id="nelson-hero-background">
 <%- include('../partials/navbar') %>
+<div class="location-page-container">
+    <div>
+        <h2 class='sponsor-heading'>Local Partners</h2>
+        <div class="sponsor-container">
+            <a class='sponsor-img-link' href="https://skiwhitewater.com/conditions/"><img class='sponsor-img' src="/images/WhiteWaterLogo.jpg" alt=""></a>
+            <a class='sponsor-img-link' href="https://kootenaybackcountryguides.com/avalanche-education"><img class='sponsor-img' src="/images/KBGLogo.jpg" alt=""></a>
+            <a class='sponsor-img-link' href="https://www.theroyalnelson.com/"><img class='sponsor-img' src="/images/RoyalLogo.jpg" alt=""></a>
+        </div>
+    </div>
+    <div>
+        <h2 class='sponsor-heading'>Today's Report</h2>
         <div class="report-container">
             <% reports.forEach(function(report) {%>
             <% if(report.location.toLowerCase() === 'nelson') { %>
-                <h1><%= report.date %></h1> 
-                <h2><%= report.location %></h2>
-                <h2></h2>
                 <video width="320" height="240" controls>
                     <source src="<%= report.video[0].url %>">
                 </video>
+                <div class='report-info'>
+                    <h1 class='report-date'><%= report.date %></h1> 
+                    <h2 class='report-location'><%= report.location %></h2>
+                </div>
             <% }}); %>
         </div>
+    </div>
+</div>
     </div>
 </section>
 <%- include('../partials/footer') %> 

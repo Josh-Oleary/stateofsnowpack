@@ -62,8 +62,8 @@ app.use(passport.initialize());
 app.use(passport.session());
 passport.use(new LocalStrategy({
     usernameField: 'email',
-    passReqToCallback: true,
-    }, User.authenticate()));
+    }, User.createStrategy()));
+
 
 passport.serializeUser(User.serializeUser());
 passport.deserializeUser(User.deserializeUser());

@@ -25,11 +25,12 @@ router.post('/register', async (req, res) => {
 router.get('/login', (req, res) => {
     res.render('users/login');
 })
+
 //login/logout routes using passport authentication and logout method
-router.post('/login', passport.authenticate('local', { failureFlash: 'invalid username or password', failureRedirect: '/login'}), (req, res) => {
+router.post('/login', passport.authenticate('local', { failureFlash: 'invalid username or password', failureRedirect: '/login'}), (req, res, err) => {
+    req.login();
     req.flash('success', 'Welcome Back!');
-    const redirectUrl = req.session.returnTo || '/';
-    delete req.session.returnTo;
+    const redirectUrl = '/';
     res.redirect(redirectUrl);
 }
      );

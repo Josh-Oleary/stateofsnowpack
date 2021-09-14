@@ -790,6 +790,12 @@ textarea {
 	color: black;
 }
 
+.donate-btn {
+	background-color: #f7941d;
+	border: 2px solid black;
+	border-radius: 5px;
+	box-shadow: 0 0 2px;
+}
 /*animations*/
 
 @keyframes fadeUp {

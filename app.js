@@ -50,7 +50,7 @@ app.use(session({
     secret: 'devsecret',
     cookie: {
         httpOnly: true,
-        secure: 'auto',
+        secure: false,
         expires: Date.now() + 1000 * 60 * 60 * 24 * 7,
         maxAge: 1000 * 60 * 60 * 24 * 7
     }
@@ -61,7 +61,8 @@ app.use(flash());
 app.use(passport.initialize());
 app.use(passport.session());
 passport.use(new LocalStrategy({
-    usernameField: 'email'
+    usernameField: 'email',
+    passReqToCallback: true,
     }, User.authenticate()));
 
 passport.serializeUser(User.serializeUser());

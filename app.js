@@ -19,9 +19,9 @@ const userRoutes = require('./routes/users');
 const publicRoutes = require('./routes/sots')
 
 const port = process.env.PORT || 3000;
-
+const credentials = process.env.MONGO_CREDENTIALS;
 //connecting database
-mongoose.connect('mongodb+srv://' + process.env.MONGO_URI, {
+mongoose.connect(`mongodb+srv://${credentials}@cluster0.b8xjv.mongodb.net/sots`, {
     useNewUrlParser: true,
     useCreateIndex: true,
     useUnifiedTopology: true,

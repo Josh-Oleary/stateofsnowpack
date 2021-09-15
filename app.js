@@ -19,7 +19,7 @@ const userRoutes = require('./routes/users');
 const publicRoutes = require('./routes/sots')
 
 const port = process.env.PORT || 3000;
-const credentials = process.env.MONGO_CREDENTIALS;
+const credentials = 'sotsAdmin:stateofthesnowpack';
 //connecting database
 mongoose.connect(`mongodb+srv://${credentials}@cluster0.b8xjv.mongodb.net/sots`, {
     useNewUrlParser: true,

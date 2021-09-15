@@ -7,14 +7,14 @@ const { storage } = require('../cloudinary');
 const upload = multer({ storage });
 
 // middleware to check if user is admin
-// router.use('/', (req, res, next) => {
-//     if (req.user && req.user.isAdmin) {
-//         next();
-//         return;
-//     }
-//     req.flash('error', 'you are not an admin')
-//     res.redirect('/')
-// });
+router.use('/', (req, res, next) => {
+    if (req.user && req.user.isAdmin) {
+        next();
+        return;
+    }
+    req.flash('error', 'you are not an admin')
+    res.redirect('/')
+});
 // routes for the admin section of the site
 router.get('/', (req, res) => {
     res.render('admin/home')

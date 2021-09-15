@@ -20,7 +20,7 @@ const publicRoutes = require('./routes/sots')
 
 const port = process.env.PORT || 3000;
 //connecting database
-mongoose.connect('mongodb://localhost:27017/SOTS', {
+mongoose.connect("mongodb+srv://sotsAdmin:stateofthesnowpack@cluster0.b8xjv.mongodb.net/sots", {
     useNewUrlParser: true,
     useCreateIndex: true,
     useUnifiedTopology: true,

@@ -27,13 +27,13 @@ router.get('/login', (req, res) => {
 })
 
 //login/logout routes using passport authentication and logout method
-router.post('/login', passport.authenticate('local', { failureFlash: 'invalid username or password', failureRedirect: '/login'}), (req, res, err) => {
-    req.login();
-    req.flash('success', 'Welcome Back!');
-    const redirectUrl = '/';
-    res.redirect(redirectUrl);
-}
-     );
+router.post('/login',
+    passport.authenticate('local', { failureRedirect: '/login'}),
+    function(req, res) {
+        console.log('successful login')
+        res.redirect('/')
+    })
+
 router.get('/logout', (req, res) => {
     req.logout();
     console.log('logged out');

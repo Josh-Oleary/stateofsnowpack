@@ -63,10 +63,19 @@ app.use(flash());
 //authentication middleware
 app.use(passport.initialize());
 app.use(passport.session());
+
 passport.use(new LocalStrategy({
     usernameField: 'email',
-    }, User.createStrategy()));
-
+    passwordField: 'password',
+},
+    function(email, password, done){
+        User.findOne({ email: email }, function(err, user){
+            if(err){ return done(err); }
+            if(!user) { return done(null, false); }
+            return done(null, user)
+        });
+    }
+));
 
 passport.serializeUser(User.serializeUser());
 passport.deserializeUser(User.deserializeUser());

@@ -13,7 +13,7 @@ const User = require('./models/user');
 const methodOverride = require('method-override');
 const helmet = require('helmet');
 const mongoSanitize = require('express-mongo-sanitize');
-const MongoStore = require('connect-mongo');
+//const MongoStore = require('connect-mongo');
 //declaring external route files
 const adminRoutes = require('./routes/admin')
 const userRoutes = require('./routes/users');

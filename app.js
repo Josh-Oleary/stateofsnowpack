@@ -13,6 +13,7 @@ const User = require('./models/user');
 const methodOverride = require('method-override');
 const helmet = require('helmet');
 const mongoSanitize = require('express-mongo-sanitize');
+const MongoStore = require('connect-mongo');
 //declaring external route files
 const adminRoutes = require('./routes/admin')
 const userRoutes = require('./routes/users');
@@ -21,7 +22,9 @@ const publicRoutes = require('./routes/sots')
 const port = process.env.PORT || 3000;
 const credentials = 'sotsAdmin:stateofthesnowpack';
 //connecting database
-mongoose.connect(`mongodb+srv://${credentials}@cluster0.b8xjv.mongodb.net/sots`, {
+const mongoURL = `mongodb+srv://${credentials}@cluster0.b8xjv.mongodb.net/sots`;
+
+mongoose.connect( mongoURL, {
     useNewUrlParser: true,
     useCreateIndex: true,
     useUnifiedTopology: true,
@@ -56,8 +59,8 @@ app.use(session({
         secure: false,
         expires: Date.now() + 1000 * 60 * 60 * 24 * 7,
         maxAge: 1000 * 60 * 60 * 24 * 7
-    }
-    //store: mongo memory store
+    },
+    store: MongoStore.create({mongoUrl: mongoURL})
 }));
 app.use(flash());
 //authentication middleware

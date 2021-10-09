@@ -20,8 +20,9 @@ const userRoutes = require('./routes/users');
 const publicRoutes = require('./routes/sots')
 
 const port = process.env.PORT || 3000;
+let cred = "sotsAdmin:stateofthesnowpack"
 //connecting database
-const mongoURL = 'mongodb+srv://sotsAdmin:stateofthesnowpack@cluster0.b8xjv.mongodb.net/sots';
+const mongoURL = `mongodb+srv://${cred}@cluster0.b8xjv.mongodb.net/sots`;
 
 mongoose.connect( mongoURL, {
     useNewUrlParser: true,

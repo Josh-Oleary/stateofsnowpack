@@ -1,6 +1,6 @@
-if(process.env.NODE_ENV !== 'production') {
+
     require('dotenv').config();
-}
+
 
 const express = require('express');
 const path = require('path')
@@ -20,9 +20,9 @@ const userRoutes = require('./routes/users');
 const publicRoutes = require('./routes/sots')
 
 const port = process.env.PORT || 3000;
-const credentials = 'sotsAdmin:stateofthesnowpack';
+// const credentials = 'sotsAdmin:stateofthesnowpack';
 //connecting database
-const mongoURL = `mongodb+srv://${credentials}@cluster0.b8xjv.mongodb.net/sots`;
+const mongoURL = process.env.MONGO_URL;
 
 mongoose.connect( mongoURL, {
     useNewUrlParser: true,
@@ -53,7 +53,7 @@ app.set('trust proxy', 1)
 app.use(session({
     resave: false, 
     saveUninitialized: true, 
-    secret: 'topsecret',
+    secret: process.env.SECRET || 'topsecret',
     cookie: {
         httpOnly: true,
         secure: false,

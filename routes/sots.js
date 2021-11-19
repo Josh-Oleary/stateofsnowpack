@@ -22,6 +22,15 @@ router.get('/nelson', (req, res) => {
         }
     })
 })
+router.get('/rosland', (req, res) => {
+    Report.find({}, (err, roslandReports) => {
+        if(err){
+            console.log(err)
+        } else {
+            res.render('locations/rosland', {reports: roslandReports})
+        }
+    })
+})
 // router.get('/golden', (req, res) => {
 //     Report.find({}, (err, goldenReports) => {
 //         if(err){

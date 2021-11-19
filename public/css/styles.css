@@ -35,13 +35,18 @@ html,body
 	image-rendering: crisp-edges;
 	padding-left: .5em;
 }
+
+.navbar {
+	justify-content: flex-start;
+}
+
 .navLinks {
 	margin-left: auto;
 	padding-right: 2em;
 }
 nav .navbar-nav li a {
 	color: #ffffffc7 !important;
-    font-size: 20px;
+  font-size: 20px;
 }
 .nav-link {
 	transition: 200ms !important;
@@ -405,8 +410,9 @@ textarea {
 
 #admin-background {
 	height: 100vh;
+	width: 100vw;
 	background-color: rgba(59, 59, 59, 0.692);
-	z-index: -2;
+	/* z-index: -2; */
 }
 .admin-form {
 	z-index: 1;
@@ -416,6 +422,12 @@ textarea {
 }
 .admin-flex {
 	display: flex;
+}
+
+.admin-container {
+	width: 10em;
+	margin: auto;
+	margin-top: 3em;
 }
 .admin-container a {
 	grid-column-start: 3;
@@ -429,27 +441,30 @@ textarea {
     transition: 250ms;
     color: black;
 	box-shadow: 0 5px 5px;
+	text-align: center;
 }
 .admin-container a:hover, a:active {
 	background-color: #335f78;
-    color: rgba(255, 255, 255, 0.712);
+	color: white;
 }
 .admin-container a:hover {
-	box-shadow: 0 4px 5px;
+	box-shadow: 0 3px 3px black;
 }
-.admin-container a:active {
-	box-shadow: 0px 3px 4px;
-}
+
 #admin-hero-header {
-	width: 40%;
 	display: flex;
 	flex-direction: column;
 	align-items: center;
 	color: white;
+	justify-content: center;
+	margin-top: 3em;
 }
 #admin-hero-header p {
 	width: 60%;
 	margin-top: 1em;
+}
+.location-header {
+	text-align: center;
 }
 /* nelson page style */
 #nelson-hero {
@@ -475,6 +490,10 @@ textarea {
 		}
 		#navLogo {
 			width: 8em;
+		}
+
+		.white-nav {
+			width: 4em;
 		}
 		.mission-statement-container {
 			flex-direction: row;

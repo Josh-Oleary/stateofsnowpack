@@ -1,0 +1,48 @@
+<nav class="navbar navbar-expand-lg bg-transparent navbar-light">
+  <div class="container-fluid">
+    <a href="/"><img id="navLogo-White" class='white-nav' style="width: 7em;" src="/images/SOS-Symbol-Color.png" alt="">
+    <img src="/images/SOS-Text-Light.png" style="width: 8em;" alt=""></a>  
+    <button class="navbar-toggler text-dark" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse " id="navbarNavDropdown">
+      <ul class="navbar-nav navLinks">
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Locations
+          </a>
+          <ul class="dropdown-menu bg-dark" aria-labelledby="navbarDropdownMenuLink">
+            <li><a class="dropdown-item" href="/nelson">Nelson BC</a></li>
+            <li><a class="dropdown-item" href="/rosland">Rossland</a></li>
+          </ul>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Resources
+          </a>
+          <ul class="dropdown-menu bg-dark" aria-labelledby="navbarDropdownMenuLink">
+            <li><a class="dropdown-item" href="admin">Admins</a></li>
+            <li><a class="dropdown-item" href="#">Education</a></li>
+            <li><a class="dropdown-item" href="#">Glossary</a></li>
+            <li><a class="dropdown-item" href="#">Add to homescreen</a></li>
+            <li><a class="dropdown-item" href="/team">Our Team</a></li>
+            <li><a class="dropdown-item" href="contact">Contact</a></li>
+          </ul>
+        </li>
+        <% if(!currentUser) { %> 
+        <li class="nav-item">
+          <a class="nav-link" href="login">Login</a>
+        </li>
+        <% } else { %>
+          <li class="nav-item">
+            <a class="nav-link" href="logout">Logout</a>
+          </li>
+        <% } %> 
+        <li class="nav-item">
+          <a class="nav-link donate-btn" aria-current="page" href="/">Donate</a>
+        </li>
+       
+      </ul>
+    </div>
+  </div>
+</nav>

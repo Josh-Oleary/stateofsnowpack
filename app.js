@@ -14,15 +14,14 @@ const User = require('./models/user');
 const methodOverride = require('method-override');
 const helmet = require('helmet');
 const mongoSanitize = require('express-mongo-sanitize');
-const MongoDBStore = require('connect-mongo');
+const MongoStore = require('connect-mongo');
 //declaring external route files
 const adminRoutes = require('./routes/admin')
 const userRoutes = require('./routes/users');
 const publicRoutes = require('./routes/sots')
 
 const port = process.env.PORT || 3000;
-const dbUrl = process.env.MONGO_URL
-const secret = process.env.SECRET
+const mongo = process.env.MONGO_URL
 
 mongoose.connect( process.env.MONGO_URL, {
     useNewUrlParser: true,
@@ -41,29 +40,6 @@ db.once('open', () => {
 const app = express();
 
 
-const store = MongoDBStore.create({
-    mongoUrl: process.env.MONGO_URL,
-    secret,
-    touchAfter: 24 * 60 * 60
-});
-
-store.on("error", function (e) {
-    console.log("SESSION STORE ERROR", e)
-})
-
-const sessionConfig = {
-    //store,
-    name: 'session',
-    secret,
-    resave: false, 
-    saveUninitialized: true, 
-    cookie: {
-        httpOnly: true,
-        secure: false,
-        expires: Date.now() + 1000 * 60 * 60 * 24 * 7,
-        maxAge: 1000 * 60 * 60 * 24 * 7
-    }
-}
 
 app.use(express.static((path.join(__dirname + '/public'))));
 app.use(express.urlencoded({ extended: true }));
@@ -75,11 +51,23 @@ app.set('view engine', 'ejs');
 app.set('views', path.join(__dirname, 'views'))
 //configuring session
 app.set('trust proxy', 1)
-app.use(session(sessionConfig));
+app.use(session({
+    resave: false, 
+    saveUninitialized: true, 
+    secret: process.env.SECRET,
+    
+    cookie: {
+        httpOnly: true,
+        secure: false,
+        expires: Date.now() + 1000 * 60 * 60 * 24 * 7,
+        maxAge: 1000 * 60 * 60 * 24 * 7
+    }
+    
+}));
 app.use(flash());
 //authentication middleware
 app.use(passport.initialize());
-app.use(passport.session(sessionConfig));
+app.use(passport.session());
 
 passport.use(new LocalStrategy({
     usernameField: 'email',

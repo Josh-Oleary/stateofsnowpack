@@ -22,9 +22,8 @@ const publicRoutes = require('./routes/sots')
 
 const port = process.env.PORT || 3000;
 
-const mongoURL = process.env.MONGO_URL;
 
-mongoose.connect( mongoURL, {
+mongoose.connect( process.env.MONGO_URL, {
     useNewUrlParser: true,
     useCreateIndex: true,
     useUnifiedTopology: true,
@@ -60,7 +59,7 @@ app.use(session({
         expires: Date.now() + 1000 * 60 * 60 * 24 * 7,
         maxAge: 1000 * 60 * 60 * 24 * 7
     },
-    store: MongoStore.create({mongoUrl: mongoURL})
+    store: MongoStore.create({mongoUrl: process.env.MONGO_URL})
 }));
 app.use(flash());
 //authentication middleware

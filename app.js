@@ -1,3 +1,4 @@
+
 if(process.env.NODE_ENV !== "production") {
     require('dotenv').config();
 }
@@ -14,16 +15,17 @@ const User = require('./models/user');
 const methodOverride = require('method-override');
 const helmet = require('helmet');
 const mongoSanitize = require('express-mongo-sanitize');
-const MongoStore = require('connect-mongo');
+//const MongoStore = require('connect-mongo');
 //declaring external route files
 const adminRoutes = require('./routes/admin')
 const userRoutes = require('./routes/users');
 const publicRoutes = require('./routes/sots')
 
 const port = process.env.PORT || 3000;
-const mongo = process.env.MONGO_URL
 
-mongoose.connect( process.env.MONGO_URL, {
+const mongoURL = process.env.MONGO_URL;
+
+mongoose.connect( mongoURL, {
     useNewUrlParser: true,
     useCreateIndex: true,
     useUnifiedTopology: true,
@@ -39,8 +41,6 @@ db.once('open', () => {
 //initializing express app
 const app = express();
 
-
-
 app.use(express.static((path.join(__dirname + '/public'))));
 app.use(express.urlencoded({ extended: true }));
 app.use(methodOverride('_method'));
@@ -55,14 +55,13 @@ app.use(session({
     resave: false, 
     saveUninitialized: true, 
     secret: process.env.SECRET,
-    
     cookie: {
         httpOnly: true,
         secure: false,
         expires: Date.now() + 1000 * 60 * 60 * 24 * 7,
         maxAge: 1000 * 60 * 60 * 24 * 7
-    }
-    
+    },
+    //store: MongoStore.create({mongoUrl: mongoURL})
 }));
 app.use(flash());
 //authentication middleware

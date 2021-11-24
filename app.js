@@ -59,7 +59,7 @@ app.use(session({
         expires: Date.now() + 1000 * 60 * 60 * 24 * 7,
         maxAge: 1000 * 60 * 60 * 24 * 7
     },
-    store: MongoStore.create({ mogoURL: 'mongodb+srv://sotsAdmin:stateofthesnowpack@cluster0.b8xjv.mongodb.net/sots' })
+    store: new MongoStore({ mogoURL: process.env.MONGO_URL })
 }));
 app.use(flash());
 //authentication middleware

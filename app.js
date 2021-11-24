@@ -79,7 +79,7 @@ app.use(session(sessionConfig));
 app.use(flash());
 //authentication middleware
 app.use(passport.initialize());
-app.use(passport.session());
+app.use(passport.session(sessionConfig));
 
 passport.use(new LocalStrategy({
     usernameField: 'email',

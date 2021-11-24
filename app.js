@@ -52,7 +52,7 @@ store.on("error", function (e) {
 })
 
 const sessionConfig = {
-    store,
+    //store,
     name: 'session',
     secret,
     resave: false, 

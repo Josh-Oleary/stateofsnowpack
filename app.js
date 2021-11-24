@@ -42,7 +42,7 @@ const app = express();
 
 
 const store = MongoDBStore.create({
-    mongoUrl: dbUrl,
+    mongoUrl: process.env.MONGO_URL,
     secret,
     touchAfter: 24 * 60 * 60
 });

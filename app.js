@@ -41,18 +41,18 @@ db.once('open', () => {
 const app = express();
 
 
-const store = MongoDBStore.create({
-    mongoUrl: dbUrl,
-    secret,
-    touchAfter: 24 * 60 * 60
-});
+// const store = MongoDBStore.create({
+//     mongoUrl: dbUrl,
+//     secret,
+//     touchAfter: 24 * 60 * 60
+// });
 
-store.on("error", function (e) {
-    console.log("SESSION STORE ERROR", e)
-})
+// store.on("error", function (e) {
+//     console.log("SESSION STORE ERROR", e)
+// })
 
 const sessionConfig = {
-    store,
+    
     name: 'session',
     secret,
     resave: false, 

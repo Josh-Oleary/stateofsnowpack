@@ -21,11 +21,8 @@ const userRoutes = require('./routes/users');
 const publicRoutes = require('./routes/sots')
 
 const port = process.env.PORT || 3000;
-// const credentials = 'sotsAdmin:stateofthesnowpack';
-//connecting database
-const URL = 'mongodb+srv://sotsAdmin:stateofthesnowpack@cluster0.b8xjv.mongodb.net/sots';
 
-const mongoURL = process.env.MONGO_URL || URL;
+const mongoURL = process.env.MONGO_URL;
 
 mongoose.connect( mongoURL, {
     useNewUrlParser: true,
@@ -56,7 +53,7 @@ app.set('trust proxy', 1)
 app.use(session({
     resave: false, 
     saveUninitialized: true, 
-    secret: process.env.SECRET || 'topsecret',
+    secret: process.env.SECRET,
     cookie: {
         httpOnly: true,
         secure: false,
